@@ -16,7 +16,8 @@
             @keydown.enter="aggiungereElemento">
             <button @click="aggiungereElemento">Aggiungi</button>
             <ul v-if="lista.length > 0">
-                <li v-for="(elementi, index) in lista" @click="cambioCompletato(index)">
+                <li v-for="(elementi, index) in lista" @click="cambioCompletato(index)"
+                    :class="(elementi.completato == true) ? 'nuovaClasse' : ''">
                     <i class="far fa-times-circle" @click="rimuovereElemento(index)"></i>
                     {{ elementi.testo }}
                 </li>

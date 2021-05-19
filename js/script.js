@@ -32,6 +32,7 @@ var app = new Vue(
             nuovoElemento: {
                 completato: false
             },
+            nuovaClasse: "text-decoration: line-through"
         },
          methods: {
             rimuovereElemento: function(newIndex) {
@@ -47,20 +48,20 @@ var app = new Vue(
                 };
             },
             cambioCompletato: function(index){
-                console.log("clicco <li></li>");
+                //console.log("clicco <li></li>");
                 //console.log(newElementi, newElementi.completato);
                 var vm = this;
-                console.log(vm.lista[index], vm.lista[index].completato);
+                //console.log(vm.lista[index], vm.lista[index].completato);
                 if (vm.lista[index].completato == false) {
                     vm.lista[index].completato = true;
                     //newElementi.completato = true;
-                    console.log(vm.lista[index].completato);
-                    console.log(vm.lista);
+                    //console.log(vm.lista[index].completato);
+                    //console.log(vm.lista);
                     //console.log(newElementi, newElementi.completato);
                     //console.log(vm.lista.completato);
                 } else {
                     vm.lista[index].completato = false;
-                    console.log(vm.lista);
+                    //console.log(vm.lista);
                     //console.log(newElementi.completato)
                 }
             }
