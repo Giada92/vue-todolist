@@ -12,14 +12,17 @@
     <body>
 
         <div id="root">
-            <input type="text" placeholder="Inserisce una cosa da fare" v-model="nuovoElemento.testo" 
+            <input type="text" placeholder="Inserisce una cosa da fare" v-model="nuovoElemento" 
             @keydown.enter="aggiungereElemento">
             <button @click="aggiungereElemento">Aggiungi</button>
             <ul v-if="lista.length > 0">
-                <li v-for="(elementi, index) in lista" @click="cambioCompletato(index)"
-                    :class="(elementi.completato == true) ? 'nuovaClasse' : ''">
+                <li v-for="(elementi, index) in lista">
                     <i class="far fa-times-circle" @click="rimuovereElemento(index)"></i>
-                    {{ elementi.testo }}
+                    <span  @click="cambioCompletato(index)" 
+                    :class="(elementi.completato == true) ? 'nuovaClasse' : ''">
+                        {{ elementi.testo }}
+                    </span>
+                    
                 </li>
             </ul>
             <h2 v-else>Hai fatto tutto quello che era in lista!</h2>

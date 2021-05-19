@@ -29,10 +29,8 @@ var app = new Vue(
                     completato: false
                 }
             ],
-            nuovoElemento: {
-                completato: false
-            },
-            nuovaClasse: "text-decoration: line-through"
+            nuovoElemento: "",
+            nuovaClasse: "stext-decoration: line-through"
         },
          methods: {
             rimuovereElemento: function(newIndex) {
@@ -42,10 +40,11 @@ var app = new Vue(
             aggiungereElemento: function(){
                 //console.log("ho cliccato");
                 //aggiungere controllo
-                this.lista.push(this.nuovoElemento);
-                this.nuovoElemento = {
+                this.lista.push({
+                    testo: this.nuovoElemento,
                     completato: false
-                };
+                });
+                this.nuovoElemento = "";
             },
             cambioCompletato: function(index){
                 //console.log("clicco <li></li>");

@@ -6,6 +6,7 @@ li {
 
 .fa-times-circle {
     cursor: pointer;
+    margin-right: 5px;
 }
 
 input {
